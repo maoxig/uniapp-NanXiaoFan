@@ -4,12 +4,22 @@
 		{
 			"path": "pages/home/home",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance": 50,
+				"app-plus": {
+					"titleNView": false, //禁用原生导航栏
+					"softinputNavBar": "none",
+					"subNVues": [{
+						"id": "homeTitleNvue", // 唯一标识  
+						"path": "pages/home/subNvue/homeTitleNvue", // 页面路径  
+						"type": "navigationBar"
+					}]
+				}
 			}
-
-		}, {
-			"path": "pages/my/my",
+		},
+		{
+			"path": "pages/user/user",
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
@@ -31,6 +41,145 @@
 
 		}
 	],
+	"subPackages": [
+		{
+		"root": "subpkg",
+		"pages": [
+			{
+				"path": "login/login",
+				"style": {
+					"navigationBarTitleText": "登录",
+					"navigationBarBackgroundColor": "#8B008B",
+					"navigationBarTextStyle": "white",
+					"app-plus": {
+						"bounce": "none", //关闭窗口回弹效果
+						"softinputNavBar": "none"
+					}
+				}
+			},
+			{
+				"path": "login/register",
+				"style": {
+					"navigationBarTitleText": "注册账号",
+					"navigationBarBackgroundColor": "#8B008B",
+					"navigationBarTextStyle": "white",
+					"app-plus": {
+						"bounce": "none", //关闭窗口回弹效果
+						"softinputNavBar": "none"
+					}
+				}
+			},
+			{
+				"path": "login/resetpasswd",
+				"style": {
+					"navigationBarTitleText": "重置密码",
+					"navigationBarBackgroundColor": "#8B008B",
+					"navigationBarTextStyle": "white",
+					"app-plus": {
+						"bounce": "none", //关闭窗口回弹效果
+						"softinputNavBar": "none"
+					}
+				}
+			},
+			{
+				"path": "user/order_list/order_list",
+				"style": {
+					"navigationBarTitleText": "我的订单",
+					"navigationBarBackgroundColor": "#f8f8f8",
+					"backgroundColorTop": "#f3f3f3",
+					"backgroundColorBottom": "#ffffff"
+				}
+			},
+			{
+				"path": "user/setting/setting",
+				"style": {
+					"navigationBarBackgroundColor": "#f8f8f8",
+					"navigationBarTitleText": "我的设置",
+					"backgroundColorTop": "#ffffff",
+					"backgroundColorBottom": "#f3f3f3"
+				}
+			},
+			{
+				"path": "user/myQR/myQR",
+				"style": {
+					"navigationBarTitleText": "我的二维码",
+					"app-plus": {
+						"bounce": "none"
+					}
+				}
+			},
+			{
+				"path": "user/coupon/coupon",
+				"style": {
+					"navigationBarTitleText": "优惠券",
+					"navigationBarBackgroundColor": "#8B008B",
+					"navigationBarTextStyle": "white",
+					"app-plus": {
+						"bounce": "none"
+					}
+				}
+			},
+			{
+				"path": "user/keep/keep",
+				"style": {
+					"navigationBarTitleText": "我的收藏",
+					"navigationBarBackgroundColor": "#8B008B",
+					"navigationBarTextStyle": "white",
+					"app-plus": {
+						"bounce": "none"
+					}
+				}
+			},
+			{
+				"path": "user/address/address",
+				"style": {
+					"navigationBarBackgroundColor": "#ffffff",
+					"navigationBarTitleText": "地址管理",
+					"backgroundColorTop": "#ffffff",
+					"backgroundColorBottom": "#ffffff"
+				}
+			},
+			{
+				"path": "user/address/edit/edit",
+				"style": {
+					"navigationBarBackgroundColor": "#ffffff",
+					"navigationBarTitleText": "编辑收件人地址",
+					"backgroundColorTop": "#ffffff",
+					"backgroundColorBottom": "#ffffff"
+				}
+			},
+			{
+				"path": "user/deposit/deposit",
+				"style": {
+					"navigationBarBackgroundColor": "#ffffff",
+					"navigationBarTitleText": "充值",
+					"backgroundColorTop": "#ffffff",
+					"backgroundColorBottom": "#ffffff"
+				}
+			},
+			{
+			    "path" : "msg/msg",
+			    "style" : {
+					"enablePullDownRefresh": true,
+					"navigationBarTitleText": "消息列表",
+					"navigationBarBackgroundColor":"#8B008B",
+					"navigationBarTextStyle":"white"
+				}
+			}
+			,{
+			    "path" : "msg/chat/chat",
+			    "style" : {
+					"navigationBarBackgroundColor":"#f2f2f2",
+					"backgroundColorTop":"#e5e5e5",
+					"backgroundColorBottom":"#e5e5e5",
+					"app-plus":{
+						"softinputNavBar":"none",
+						"bounce":"none"
+					}
+				}
+			}
+		]
+	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "南小饭",
@@ -60,7 +209,7 @@
 				"selectedIconPath": "static/tab_icons/order_active.png"
 			},
 			{
-				"pagePath": "pages/my/my",
+				"pagePath": "pages/user/user",
 				"text": "我的",
 				"iconPath": "static/tab_icons/my.png",
 				"selectedIconPath": "static/tab_icons/my_active.png"
