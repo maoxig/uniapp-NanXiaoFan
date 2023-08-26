@@ -448,7 +448,6 @@
 			//开启定时器
 			this.Timer();
 			//加载活动专区
-			this.loadPromotion();
 		},
 		methods: {
 			//加载Promotion 并设定倒计时,,实际应用中应该是ajax加载此数据。
@@ -504,11 +503,22 @@
 			handleButtonClick(buttonIndex) {
 				if (buttonIndex === 1) {
 					//自提
-					uni.showToast("自提", 1500, 'none')
+					uni.scanCode({
+						success:function(res){
+							console.log('条码类型：' + res.scanType);
+									console.log('条码内容：' + res.result);
+						}
+					})
 
 				} else if (buttonIndex === 2) {
 					//代取
-					uni.showToast("代取", 1500, 'none')
+					uni.scanCode({
+						onlyFromCamera: true,
+						success: function (res) {
+							console.log('条码类型：' + res.scanType);
+							console.log('条码内容：' + res.result);
+						}
+					});
 				}
 			},
 			//展示最近订单不同的类型
